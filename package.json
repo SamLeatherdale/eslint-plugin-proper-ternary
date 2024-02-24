@@ -1,6 +1,6 @@
 {
 	"name": "@samldev/eslint-plugin-proper-ternary",
-	"version": "3.2.0",
+	"version": "3.2.1",
 	"description": "ESLint rules to ensure proper usage of ternary/conditional expressions",
 	"main": "./lib/index.js",
 	"scripts": {
