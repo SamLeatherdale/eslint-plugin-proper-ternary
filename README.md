@@ -406,7 +406,9 @@ The **proper-ternary**/*parens* rule can be configured with any combination of t
 
 * [`"comparison"`](#rule-parens-configuration-comparison) (default: `true`) requires a comparison expression (ie, `x == y`, `x > y`, etc) to have `( .. )` surrounding it.
 
-* [`"logical"`](#rule-parens-configuration-logical) (default: `true`) requires a logical expression (ie, `x && y`, `!x`, etc) to have `( .. )` surrounding it.
+* [`"logical"`](#rule-parens-configuration-logical) (default: `true`) requires a logical expression (ie, `x && y`, etc) to have `( .. )` surrounding it.
+
+* [`"unary"`](#rule-parens-configuration-unary) (default: `true`) requires a unary expression (ie, `!x`) to have `( .. )` surrounding it.
 
 * [`"call"`](#rule-parens-configuration-call) (default: `true`) requires a call expression (ie, `foo()`, `new Foo()`, etc) to have `( .. )` surrounding it.
 
@@ -414,7 +416,8 @@ The **proper-ternary**/*parens* rule can be configured with any combination of t
 
 * [`"simple"`](#rule-parens-configuration-simple) (**default: `false`**) requires a simple expression (ie, `x`, `x.y`, `42`, etc) to have `( .. )` surrounding it. It's likely you'll want to keep this mode disabled (default).
 
-**Note:** Any expression not covered by these modes, such as `x + y`, is considered a *complex* expression. If this rule is enabled, complex expressions always require `( .. )` surrounding them; there is no `"complex"` mode to disable them. Reasoning: if you feel that `x + y * z` is a sufficient expression to not need `( .. )`, then you almost certainly would be inclined to disable all the other above modes too, in which case you should just disable the rule entirely.
+* [`"complex"`](#rule-parens-configuration-complex) (default: `true`) requires a complex expression (ie, `x + y`, `x.y.z`, etc) to have `( .. )` surrounding it. There is no mode to disable this.
+
 
 #### Rule `"nested"` Configuration: Ternary
 
