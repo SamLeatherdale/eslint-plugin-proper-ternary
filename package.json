@@ -17,6 +17,7 @@
 		"publish": "npm run coverage:report"
 	},
 	"devDependencies": {
+		"@types/estree": "^1.0.5",
 		"coveralls": "~3.1.0",
 		"eslint": "~7.25.0",
 		"qunit": "~2.15.0",
