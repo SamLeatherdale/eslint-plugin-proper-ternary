@@ -1,6 +1,6 @@
 {
-	"name": "@getify/eslint-plugin-proper-ternary",
-	"version": "3.1.1",
+	"name": "@samldev/eslint-plugin-proper-ternary",
+	"version": "3.2.0",
 	"description": "ESLint rules to ensure proper usage of ternary/conditional expressions",
 	"main": "./lib/index.js",
 	"scripts": {
@@ -25,7 +25,13 @@
 	"peerDependencies": {
 		"eslint": ">= 7.25.0"
 	},
-	"repository": "getify/eslint-plugin-proper-ternary",
+	"repository": "samleatherdale/eslint-plugin-proper-ternary",
+	"files": [
+		"dist",
+		"lib",
+		"LICENSE.txt",
+		"README.md"
+	],
 	"keywords": [
 		"eslint",
 		"plugin",
@@ -34,10 +40,13 @@
 		"ternary"
 	],
 	"bugs": {
-		"url": "https://github.com/getify/eslint-plugin-proper-ternary/issues",
-		"email": "getify@gmail.com"
+		"url": "https://github.com/samleatherdale/eslint-plugin-proper-ternary/issues",
+		"email": "samldev@proton.me"
 	},
-	"homepage": "https://github.com/getify/eslint-plugin-proper-ternary",
+	"homepage": "https://github.com/samleatherdale/eslint-plugin-proper-ternary",
 	"author": "Kyle Simpson <getify@gmail.com>",
+	"contributors": [
+		"Sam Leatherdale <samldev@proton.me>"
+	],
 	"license": "MIT"
 }
