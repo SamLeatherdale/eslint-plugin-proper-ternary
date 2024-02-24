@@ -1,10 +1,6 @@
 # ESLint Plugin: proper-ternary
 
-[![Build Status](https://travis-ci.org/getify/eslint-plugin-proper-ternary.svg?branch=master)](https://travis-ci.org/getify/eslint-plugin-proper-ternary)
-[![npm Module](https://badge.fury.io/js/%40getify%2Feslint-plugin-proper-ternary.svg)](https://www.npmjs.org/package/@getify/eslint-plugin-proper-ternary)
-[![Dependencies](https://david-dm.org/getify/eslint-plugin-proper-ternary.svg)](https://david-dm.org/getify/eslint-plugin-proper-ternary)
-[![devDependencies](https://david-dm.org/getify/eslint-plugin-proper-ternary/dev-status.svg)](https://david-dm.org/getify/eslint-plugin-proper-ternary?type=dev)
-[![Coverage Status](https://coveralls.io/repos/github/getify/eslint-plugin-proper-ternary/badge.svg?branch=master)](https://coveralls.io/github/getify/eslint-plugin-proper-ternary?branch=master)
+[![npm Module](https://badge.fury.io/js/%40samldev%2Feslint-plugin-proper-ternary.svg)](https://www.npmjs.org/package/@samldev/eslint-plugin-proper-ternary)
 
 ## Overview
 
@@ -29,7 +25,7 @@ If you'd like to use the **proper-ternary** plugin in a recommended configuratio
 ```js
 "extends": [
     // ..
-    "plugin:@getify/proper-ternary/CONFIG-PRESET-NAME",
+    "plugin:@samldev/proper-ternary/CONFIG-PRESET-NAME",
     // ..
 ]
 ```
@@ -50,12 +46,12 @@ To load the plugin and enable its rules via a local or global `.eslintrc.json` c
 
 ```json
 "plugins": [
-    "@getify/proper-ternary"
+    "@samldev/proper-ternary"
 ],
 "rules": {
-    "@getify/proper-ternary/nested": "error",
-    "@getify/proper-ternary/parens": "error",
-    "@getify/proper-ternary/where": "error"
+    "@samldev/proper-ternary/nested": "error",
+    "@samldev/proper-ternary/parens": "error",
+    "@samldev/proper-ternary/where": "error"
 }
 ```
 
@@ -66,12 +62,12 @@ To load the plugin and enable its rules via a project's `package.json`:
 ```json
 "eslintConfig": {
     "plugins": [
-        "@getify/proper-ternary"
+        "@samldev/proper-ternary"
     ],
     "rules": {
-        "@getify/proper-ternary/nested": "error",
-        "@getify/proper-ternary/parens": "error",
-        "@getify/proper-ternary/where": "error"
+        "@samldev/proper-ternary/nested": "error",
+        "@samldev/proper-ternary/parens": "error",
+        "@samldev/proper-ternary/where": "error"
     }
 }
 ```
@@ -81,15 +77,15 @@ To load the plugin and enable its rules via a project's `package.json`:
 To load the plugin and enable its rules via ESLint CLI parameters, use `--plugin` and `--rule` flags:
 
 ```cmd
-eslint .. --plugin='@getify/proper-ternary' --rule='@getify/proper-ternary/nested: error' ..
+eslint .. --plugin='@samldev/proper-ternary' --rule='@samldev/proper-ternary/nested: error' ..
 ```
 
 ```cmd
-eslint .. --plugin='@getify/proper-ternary' --rule='@getify/proper-ternary/parens: error' ..
+eslint .. --plugin='@samldev/proper-ternary' --rule='@samldev/proper-ternary/parens: error' ..
 ```
 
 ```cmd
-eslint .. --plugin='@getify/proper-ternary' --rule='@getify/proper-ternary/where: error' ..
+eslint .. --plugin='@samldev/proper-ternary' --rule='@samldev/proper-ternary/where: error' ..
 ```
 
 ### ESLint Node API
@@ -97,17 +93,17 @@ eslint .. --plugin='@getify/proper-ternary' --rule='@getify/proper-ternary/where
 To use this plugin in Node.js with the ESLint API, require the npm module, and then (for example) pass the rule's definition to `Linter#defineRule(..)`, similar to:
 
 ```js
-var properTernary = require("@getify/eslint-plugin-proper-ternary");
+var properTernary = require("@samldev/eslint-plugin-proper-ternary");
 
 // ..
 
 var eslinter = new (require("eslint").Linter)();
 
-eslinter.defineRule("@getify/proper-ternary/nested",properTernary.rules.nested);
+eslinter.defineRule("@samldev/proper-ternary/nested",properTernary.rules.nested);
 
-eslinter.defineRule("@getify/proper-ternary/parens",properTernary.rules.parens);
+eslinter.defineRule("@samldev/proper-ternary/parens",properTernary.rules.parens);
 
-eslinter.defineRule("@getify/proper-ternary/where",properTernary.rules.where);
+eslinter.defineRule("@samldev/proper-ternary/where",properTernary.rules.where);
 ```
 
 Then lint some code like this:
@@ -115,9 +111,9 @@ Then lint some code like this:
 ```js
 eslinter.verify(".. some code ..",{
     rules: {
-        "@getify/proper-ternary/nested": "error",
-        "@getify/proper-ternary/parens": "error",
-        "@getify/proper-ternary/where": "error"
+        "@samldev/proper-ternary/nested": "error",
+        "@samldev/proper-ternary/parens": "error",
+        "@samldev/proper-ternary/where": "error"
     }
 });
 ```
@@ -127,15 +123,15 @@ eslinter.verify(".. some code ..",{
 Once the plugin is loaded, the rule can be configured using inline code comments if desired, such as:
 
 ```js
-/* eslint "@getify/proper-ternary/nested": "error" */
+/* eslint "@samldev/proper-ternary/nested": "error" */
 ```
 
 ```js
-/* eslint "@getify/proper-ternary/parens": "error" */
+/* eslint "@samldev/proper-ternary/parens": "error" */
 ```
 
 ```js
-/* eslint "@getify/proper-ternary/where": "error" */
+/* eslint "@samldev/proper-ternary/where": "error" */
 ```
 
 ## Rule: `"nested"`
@@ -145,7 +141,7 @@ The **proper-ternary**/*nested* rule controls the nesting of `? :` ternary expre
 To turn this rule on:
 
 ```json
-"@getify/proper-ternary/nested": "error"
+"@samldev/proper-ternary/nested": "error"
 ```
 
 The main purpose of this rule is to avoid readability harm for `? :` ternary expressions with confusing nesting of other ternary expressions. By forbidding confusing nesting, the reader can more clearly understand what the ternary will result in.
@@ -201,7 +197,7 @@ The **proper-ternary**/*nested* rule can be configured with various combinations
 To configure the `"test"`, `"then"`, or `"else"` rule modes (each default: `false`):
 
 ```json
-"@getify/proper-ternary/nested": [ "error", { "test": true, "then": true, "else": true }
+"@samldev/proper-ternary/nested": [ "error", { "test": true, "then": true, "else": true }
 ```
 
 Each clause must be explicitly enabled for nested ternary expressions to be allowed there. Leaving all three clause types disabled effectively disables all ternary expression nesting.
@@ -324,7 +320,7 @@ The single variable (`accountType`) assignment is a little less obvious in this 
 To configure this rule mode (default: `1`):
 
 ```json
-"@getify/proper-ternary/nested": [ "error", { "depth": 1 } ]
+"@samldev/proper-ternary/nested": [ "error", { "depth": 1 } ]
 ```
 
 If any of the [`"test"` / `"then"` / `"else"` modes](#rule-nested-configuration-clauses) are enabled, you can also control how many levels of ternary expression nesting are allowed with the `"depth"` setting.
@@ -359,7 +355,7 @@ The **proper-ternary**/*parens* rule requires `( .. )` parentheses surrounding v
 To turn this rule on:
 
 ```json
-"@getify/proper-ternary/parens": "error"
+"@samldev/proper-ternary/parens": "error"
 ```
 
 The main purpose of this rule is to avoid readability harm for `? :` ternary expressions by requiring disambiguating `( .. )` around any clause's expression if that expression's boundary isn't obvious, such as operator associativity or precedence, for example.
@@ -424,7 +420,7 @@ The **proper-ternary**/*parens* rule can be configured with any combination of t
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/parens": [ "error", { "ternary": false } ]
+"@samldev/proper-ternary/parens": [ "error", { "ternary": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -444,7 +440,7 @@ var x = y ? z : (w ? u : v);
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/parens": [ "error", { "comparison": false } ]
+"@samldev/proper-ternary/parens": [ "error", { "comparison": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -464,7 +460,7 @@ var x = (y > 3) ? y : z;
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/parens": [ "error", { "logical": false } ]
+"@samldev/proper-ternary/parens": [ "error", { "logical": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -484,7 +480,7 @@ var x = (y && z) ? y : z;
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/parens": [ "error", { "call": false } ]
+"@samldev/proper-ternary/parens": [ "error", { "call": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -506,7 +502,7 @@ var x = y ? ( foo(y,z) ) : z;
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/parens": [ "error", { "object": false } ]
+"@samldev/proper-ternary/parens": [ "error", { "object": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -528,7 +524,7 @@ var x = y ? ( [y,z] ) : z;
 To configure this rule mode **on** (**off** by default):
 
 ```json
-"@getify/proper-ternary/parens": [ "error", { "simple": true } ]
+"@samldev/proper-ternary/parens": [ "error", { "simple": true } ]
 ```
 
 If this mode is on, it will report errors for each clause:
@@ -550,7 +546,7 @@ The **proper-ternary**/*where* rule restricts where in program structure ternary
 To turn this rule on:
 
 ```json
-"@getify/proper-ternary/where": "error"
+"@samldev/proper-ternary/where": "error"
 ```
 
 The main purpose of this rule is to avoid readability harm for the program when `? :` ternary expressions are misused. By restricting ternary expressions to certain usages, the ternary-forbidden usages are structured using more appropriate syntax/logic.
@@ -670,7 +666,7 @@ The **proper-ternary**/*where* rule can be configured with any combination of th
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "statement": false } ]
+"@samldev/proper-ternary/where": [ "error", { "statement": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -697,7 +693,7 @@ else {
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "property": false } ]
+"@samldev/proper-ternary/where": [ "error", { "property": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -734,7 +730,7 @@ var loginRecord = {
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "property": false } ]
+"@samldev/proper-ternary/where": [ "error", { "property": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -771,7 +767,7 @@ var loginRecord = {
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "argument": false } ]
+"@samldev/proper-ternary/where": [ "error", { "argument": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -796,7 +792,7 @@ checkAccount(accountToCheck);
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "argument": false } ]
+"@samldev/proper-ternary/where": [ "error", { "argument": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -825,7 +821,7 @@ function lookupAccount(userID = -1) {
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "default": false } ]
+"@samldev/proper-ternary/where": [ "error", { "default": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -856,7 +852,7 @@ function createUser(data,cb) {
 To configure this rule mode off (on by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "sub": false } ]
+"@samldev/proper-ternary/where": [ "error", { "sub": false } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -887,7 +883,7 @@ var isAllowed = !basicAccountType;
 To configure this rule mode **on** (**off** by default):
 
 ```json
-"@getify/proper-ternary/where": [ "error", { "assignment": true } ]
+"@samldev/proper-ternary/where": [ "error", { "assignment": true } ]
 ```
 
 If this mode is on (default), it will report an error for:
@@ -910,22 +906,15 @@ else {
 
 ## npm Package
 
-To use this plugin with a global install of ESLint (recommended):
-
-```cmd
-npm install -g @getify/eslint-plugin-proper-ternary
-```
-
 To use this plugin with a local install of ESLint:
 
 ```cmd
-npm install @getify/eslint-plugin-proper-ternary
+npm install @samldev/eslint-plugin-proper-ternary
 ```
 
 ## Builds
 
-[![Build Status](https://travis-ci.org/getify/eslint-plugin-proper-ternary.svg?branch=master)](https://travis-ci.org/getify/eslint-plugin-proper-ternary)
-[![npm Module](https://badge.fury.io/js/%40getify%2Feslint-plugin-proper-ternary.svg)](https://www.npmjs.org/package/@getify/eslint-plugin-proper-ternary)
+[![npm Module](https://badge.fury.io/js/%40samldev%2Feslint-plugin-proper-ternary.svg)](https://www.npmjs.org/package/@samldev/eslint-plugin-proper-ternary)
 
 If you need to bundle/distribute this eslint plugin, use `dist/eslint-plugin-proper-ternary.js`, which comes pre-built with the npm package distribution; you shouldn't need to rebuild it under normal circumstances.
 
@@ -976,26 +965,6 @@ A comprehensive test suite is included in this repository, as well as the npm pa
     ```cmd
     node scripts/node-tests.js
     ```
-
-### Test Coverage
-
-[![Coverage Status](https://coveralls.io/repos/github/getify/eslint-plugin-proper-ternary/badge.svg?branch=master)](https://coveralls.io/github/getify/eslint-plugin-proper-ternary?branch=master)
-
-If you have [Istanbul](https://github.com/gotwarlost/istanbul) already installed on your system (requires v1.0+), you can use it to check the test coverage:
-
-```cmd
-npm run coverage
-```
-
-Then open up `coverage/lcov-report/index.html` in a browser to view the report.
-
-To run Istanbul directly without npm:
-
-```cmd
-istanbul cover scripts/node-tests.js
-```
-
-**Note:** The npm script `coverage:report` is only intended for use by project maintainers; it sends coverage reports to [Coveralls](https://coveralls.io/).
 
 ## License
 
