@@ -412,7 +412,7 @@ The **proper-ternary**/*parens* rule can be configured with any combination of t
 
 * [`"simple"`](#rule-parens-configuration-simple) (**default: `false`**) requires a simple expression (ie, `x`, `x.y`, `42`, etc) to have `( .. )` surrounding it. It's likely you'll want to keep this mode disabled (default).
 
-* [`"complex"`](#rule-parens-configuration-complex) (default: `true`) requires a complex expression (ie, `x + y`, `x.y.z`, etc) to have `( .. )` surrounding it. There is no mode to disable this.
+* [`"complex"`](#rule-parens-configuration-complex) (default: `true`) requires a complex expression (ie, `x + y`, `x.y.z`, etc) to have `( .. )` surrounding it.
 
 
 #### Rule `"nested"` Configuration: Ternary
